@@ -1,0 +1,18 @@
+package demo.restaurant.backend.repositories;
+
+import demo.restaurant.backend.entities.Restaurant;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+import java.util.Set;
+
+public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
+
+    Set<Restaurant> findByCityContainingIgnoreCase(String city);
+
+    Set<Restaurant> findByCategory(String category);
+
+    Set<Restaurant> findByNameContainingIgnoreCase(String name);
+
+    Set<Restaurant> findByRatingGreaterThanEqual(double rating);
+}
