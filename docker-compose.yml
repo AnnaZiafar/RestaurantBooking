@@ -1,9 +1,9 @@
 services:
   mysql:
     image: mysql:9.5.0
-    container_name: restaurant_booking
+    container_name: dineOut_demo
     environment:
-      MYSQL_DATABASE: restaurant_demo_db
+      MYSQL_DATABASE: dineOut_demo
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
