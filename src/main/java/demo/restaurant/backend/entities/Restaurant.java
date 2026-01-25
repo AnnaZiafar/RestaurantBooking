@@ -7,7 +7,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -30,7 +32,10 @@ public class Restaurant {
             inverseJoinColumns = @JoinColumn(name = "opening_hours_id")
     )
     @ToString.Exclude
-    private List<OpeningHours> openingHours = new ArrayList<>();
+    private Set<OpeningHours> openingHours = new HashSet<>();
+
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<DiningTable> tables = new HashSet<>();
 
     private String category;
     private String address;
@@ -45,5 +50,15 @@ public class Restaurant {
         this.rating = rating;
         this.meanPrice = meanPrice;
         this.imagePath = imagePath;
+    }
+
+    public void addOpeningHours(OpeningHours openingHours){
+        this.openingHours.add(openingHours);
+        openingHours.getRestaurants().add(this);
+    }
+
+    public void addTable(DiningTable table){
+        this.tables.add(table);
+        table.setRestaurant(this);
     }
 }

@@ -16,7 +16,9 @@ import java.util.Set;
 @ToString
 @NoArgsConstructor
 @Entity
-@Table(name = "opening_hours")
+@Table(name = "opening_hours", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"weekday", "openingTime", "closingTime"})
+})
 public class OpeningHours {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
