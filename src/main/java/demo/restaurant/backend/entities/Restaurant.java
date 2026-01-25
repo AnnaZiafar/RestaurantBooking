@@ -38,14 +38,16 @@ public class Restaurant {
     private Set<DiningTable> tables = new HashSet<>();
 
     private String category;
+    private String city;
     private String address;
     private double rating;
     private double meanPrice;
     private String imagePath;
 
-    public Restaurant(String name, String category, String address, double rating, double meanPrice, String imagePath){
+    public Restaurant(String name, String category, String city, String address, double rating, double meanPrice, String imagePath){
         this.name = name;
         this.category = category;
+        this.city = city;
         this.address = address;
         this.rating = rating;
         this.meanPrice = meanPrice;
