@@ -1,0 +1,110 @@
+[
+  {
+    "name": "TOSO",
+    "category": "Asian",
+    "city": "Göteborg",
+    "address": "Götaplatsen 1",
+    "rating": 4.9,
+    "meanPrice": 400,
+    "imagePath": "toso.png",
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "17:00", "closingTime": "23:00"},
+      {"weekday": "TUESDAY", "openingTime": "17:00", "closingTime": "23:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "17:00", "closingTime": "23:00"},
+      {"weekday": "THURSDAY", "openingTime": "17:00", "closingTime": "23:00"},
+      {"weekday": "FRIDAY", "openingTime": "17:00", "closingTime": "01:00"},
+      {"weekday": "SATURDAY", "openingTime": "12:00", "closingTime": "01:00"},
+      {"weekday": "SUNDAY", "openingTime": "12:00", "closingTime": "23:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  4},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  8},
+      {"tableNumber":  6, "seatCapacity":  8}
+    ]
+  },
+
+  {
+    "name": "Lilla Taverna",
+    "category": "Greek",
+    "city": "Göteborg",
+    "address": "Olivedalsgatan 17",
+    "rating": 3.7,
+    "meanPrice": 140,
+    "imagePath": "lillaTaverna.png",
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "TUESDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "THURSDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "FRIDAY", "openingTime": "16:30", "closingTime": "00:00"},
+      {"weekday": "SATURDAY", "openingTime": "13:00", "closingTime": "00:00"},
+      {"weekday": "SUNDAY", "openingTime": "13:00", "closingTime": "22:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  2},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  8},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  8},
+      {"tableNumber":  6, "seatCapacity":  6}
+    ]
+  },
+
+  {
+    "name": "BASTA",
+    "category": "Pasta",
+    "city": "Stockholm",
+    "address": "Mäster Samuelsgatan 59",
+    "rating": 4.3,
+    "meanPrice": 250,
+    "imagePath": "basta.png",
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "11:00", "closingTime": "22:30"},
+      {"weekday": "TUESDAY", "openingTime": "11:00", "closingTime": "22:30"},
+      {"weekday": "WEDNESDAY", "openingTime": "11:00", "closingTime": "22:30"},
+      {"weekday": "THURSDAY", "openingTime": "11:00", "closingTime": "22:30"},
+      {"weekday": "FRIDAY", "openingTime": "11:00", "closingTime": "00:15"},
+      {"weekday": "SATURDAY", "openingTime": "11:00", "closingTime": "00:15"},
+      {"weekday": "SUNDAY", "openingTime": "11:00", "closingTime": "21:45"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  6},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  8},
+      {"tableNumber":  6, "seatCapacity":  8},
+      {"tableNumber":  7, "seatCapacity":  2},
+      {"tableNumber":  8, "seatCapacity":  2}
+    ]
+  },
+
+  {
+    "name": "Via Napoli",
+    "category": "Pizza",
+    "city": "Malmö",
+    "address": "Sergels väg 11",
+    "rating": 4.1,
+    "meanPrice": 250,
+    "imagePath": "viaNapoli.png",
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "TUESDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "THURSDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "FRIDAY", "openingTime": "10:00", "closingTime": "22:30"},
+      {"weekday": "SATURDAY", "openingTime": "11:00", "closingTime": "22:30"},
+      {"weekday": "SUNDAY", "openingTime": "11:00", "closingTime": "21:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  4},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  8}
+    ]
+  }
+]
