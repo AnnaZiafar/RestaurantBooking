@@ -15,4 +15,6 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     Set<Restaurant> findByNameContainingIgnoreCase(String name);
 
     Set<Restaurant> findByRatingGreaterThanEqual(double rating);
+
+    boolean existsByName(String name);
 }

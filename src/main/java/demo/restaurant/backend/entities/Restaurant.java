@@ -25,7 +25,7 @@ public class Restaurant {
     @Column(unique = true)
     private String name;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
             name = "restaurant_opening_hours",
             joinColumns = @JoinColumn(name = "restaurant_id"),

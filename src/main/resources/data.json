@@ -106,5 +106,32 @@
       {"tableNumber":  4, "seatCapacity":  2},
       {"tableNumber":  5, "seatCapacity":  8}
     ]
+  },
+
+  {
+    "name": "Melo Male Vasastan",
+    "category": "Pizza",
+    "city": "Stockholm",
+    "address": "Roslagsgatan 15",
+    "rating": 4.5,
+    "meanPrice": 150,
+    "imagePath": "meloMaleVasastan.png",
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "TUESDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "THURSDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "FRIDAY", "openingTime": "10:00", "closingTime": "22:30"},
+      {"weekday": "SATURDAY", "openingTime": "11:00", "closingTime": "22:30"},
+      {"weekday": "SUNDAY", "openingTime": "11:00", "closingTime": "21:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  4},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  2}
+    ]
   }
 ]

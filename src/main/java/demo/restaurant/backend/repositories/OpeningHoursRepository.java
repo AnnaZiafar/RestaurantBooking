@@ -11,4 +11,6 @@ public interface OpeningHoursRepository extends JpaRepository<OpeningHours, Long
 
     Optional<OpeningHours> findByWeekdayAndOpeningTimeAndClosingTime(
             Weekday weekday, LocalTime openingTime, LocalTime closingTime);
+
+    boolean existsByWeekdayAndOpeningTimeAndClosingTime(Weekday weekday, LocalTime openingTime, LocalTime closingTime);
 }
