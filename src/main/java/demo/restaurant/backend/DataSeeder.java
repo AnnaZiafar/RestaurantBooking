@@ -32,7 +32,7 @@ public class DataSeeder implements CommandLineRunner {
         for(Restaurant restaurant : restaurants){
             if(!restaurantRepository.existsByName(restaurant.getName())){
                 restaurant.getTables().forEach(table -> table.setRestaurant(restaurant));
-                openingHoursService.reuseOrCreateOpeningHours(restaurant);
+                openingHoursService.syncOpeningHours(restaurant);
                 restaurantRepository.save(restaurant);
             }
         }

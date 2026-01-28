@@ -3,11 +3,11 @@ package demo.restaurant.backend.services;
 import demo.restaurant.backend.entities.OpeningHours;
 import demo.restaurant.backend.entities.Restaurant;
 import demo.restaurant.backend.repositories.OpeningHoursRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @RequiredArgsConstructor
@@ -16,24 +16,24 @@ public class OpeningHoursService {
 
     private final OpeningHoursRepository openingHoursRepository;
 
-    public void reuseOrCreateOpeningHours(Restaurant restaurant){
+    @Transactional
+    public void syncOpeningHours(Restaurant restaurant){
         Set<OpeningHours> openingHours = restaurant.getOpeningHours();
         Set<OpeningHours> managedHours = new HashSet<>();
 
         for(OpeningHours timeslot : openingHours){
-            Optional<OpeningHours> exist = openingHoursRepository
-                    .findByWeekdayAndOpeningTimeAndClosingTime(
-                            timeslot.getWeekday(),
-                            timeslot.getOpeningTime(),
-                            timeslot.getClosingTime()
-                    );
-
-            if(exist.isPresent())
-                managedHours.add(exist.get());
-            else
-                managedHours.add(openingHoursRepository.save(timeslot));
+            managedHours.add(findOrCreateTimeslot(timeslot));
         }
 
         restaurant.setOpeningHours(managedHours);
+    }
+
+    private OpeningHours findOrCreateTimeslot(OpeningHours openingHours){
+        return openingHoursRepository.findByWeekdayAndOpeningTimeAndClosingTime(
+                openingHours.getWeekday(),
+                openingHours.getOpeningTime(),
+                openingHours.getClosingTime()
+        )
+                .orElseGet(() -> openingHoursRepository.save(openingHours));
     }
 }

@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = {"openingHours", "tables"})
 @NoArgsConstructor
 @Entity
 @Table(name = "restaurant")
@@ -31,7 +31,6 @@ public class Restaurant {
             joinColumns = @JoinColumn(name = "restaurant_id"),
             inverseJoinColumns = @JoinColumn(name = "opening_hours_id")
     )
-    @ToString.Exclude
     private Set<OpeningHours> openingHours = new HashSet<>();
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
