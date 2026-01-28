@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = {"openingHours", "tables"})
 @NoArgsConstructor
 @Entity
 @Table(name = "restaurant")
@@ -25,13 +25,12 @@ public class Restaurant {
     @Column(unique = true)
     private String name;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
             name = "restaurant_opening_hours",
             joinColumns = @JoinColumn(name = "restaurant_id"),
             inverseJoinColumns = @JoinColumn(name = "opening_hours_id")
     )
-    @ToString.Exclude
     private Set<OpeningHours> openingHours = new HashSet<>();
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)

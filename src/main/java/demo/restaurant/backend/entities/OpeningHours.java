@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "restaurants")
 @NoArgsConstructor
 @Entity
 @Table(name = "opening_hours", uniqueConstraints = {
@@ -31,7 +31,6 @@ public class OpeningHours {
     private LocalTime closingTime;
 
     @ManyToMany(mappedBy = "openingHours")
-    @ToString.Exclude
     private Set<Restaurant> restaurants = new HashSet<>();
 
     public OpeningHours(Weekday weekday, LocalTime openingTime, LocalTime closingTime){
