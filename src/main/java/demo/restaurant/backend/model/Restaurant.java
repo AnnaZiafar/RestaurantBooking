@@ -23,6 +23,9 @@ public class Restaurant {
     @Column(unique = true)
     private String name;
 
+    @Embedded
+    private Address address;
+
     @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
             name = "restaurant_opening_hours",
@@ -35,17 +38,14 @@ public class Restaurant {
     private Set<DiningTable> tables = new HashSet<>();
 
     private String category;
-    private String city;
-    private String address;
     private double rating;
     private double meanPrice;
     private String imagePath;
 
-    public Restaurant(String name, String category, String city, String address, double rating, double meanPrice, String imagePath){
+    public Restaurant(String name, Address address, String category, double rating, double meanPrice, String imagePath){
         this.name = name;
-        this.category = category;
-        this.city = city;
         this.address = address;
+        this.category = category;
         this.rating = rating;
         this.meanPrice = meanPrice;
         this.imagePath = imagePath;
