@@ -1,6 +1,6 @@
 package demo.restaurant.backend.repositories;
 
-import demo.restaurant.backend.entities.Customer;
+import demo.restaurant.backend.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

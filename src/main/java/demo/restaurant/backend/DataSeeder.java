@@ -1,6 +1,6 @@
 package demo.restaurant.backend;
 
-import demo.restaurant.backend.entities.Restaurant;
+import demo.restaurant.backend.model.Restaurant;
 import demo.restaurant.backend.repositories.RestaurantRepository;
 import demo.restaurant.backend.services.OpeningHoursService;
 import jakarta.transaction.Transactional;

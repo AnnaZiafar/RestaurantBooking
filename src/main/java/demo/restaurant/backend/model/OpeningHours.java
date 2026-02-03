@@ -1,4 +1,4 @@
-package demo.restaurant.backend.entities;
+package demo.restaurant.backend.model;
 
 import demo.restaurant.backend.enums.Weekday;
 import jakarta.persistence.*;
@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@ToString(exclude = "restaurants")
+@ToString
 @NoArgsConstructor
 @Entity
 @Table(name = "opening_hours", uniqueConstraints = {

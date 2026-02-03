@@ -1,7 +1,7 @@
 package demo.restaurant.backend.repositories;
 
-import demo.restaurant.backend.entities.OpeningHours;
-import demo.restaurant.backend.entities.Restaurant;
+import demo.restaurant.backend.model.OpeningHours;
+import demo.restaurant.backend.model.Restaurant;
 import demo.restaurant.backend.enums.Weekday;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 
 import java.time.LocalTime;
 import java.util.Optional;
-import java.util.Set;
 
 public interface OpeningHoursRepository extends JpaRepository<OpeningHours, Long> {
 

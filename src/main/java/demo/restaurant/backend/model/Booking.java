@@ -1,4 +1,4 @@
-package demo.restaurant.backend.entities;
+package demo.restaurant.backend.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

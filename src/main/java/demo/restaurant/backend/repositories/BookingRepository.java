@@ -1,8 +1,8 @@
 package demo.restaurant.backend.repositories;
 
-import demo.restaurant.backend.entities.Booking;
-import demo.restaurant.backend.entities.Customer;
-import demo.restaurant.backend.entities.Restaurant;
+import demo.restaurant.backend.model.Booking;
+import demo.restaurant.backend.model.Customer;
+import demo.restaurant.backend.model.Restaurant;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

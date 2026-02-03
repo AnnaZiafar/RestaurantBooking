@@ -10,11 +10,10 @@ public class RestaurantApplication {
     public static void main(String[] args) {
 
         Dotenv env = Dotenv.configure().load();
-        env.entries().forEach(entry -> {
-            System.setProperty(entry.getKey(), entry.getValue());
-        });
+        env.entries().forEach(entry -> System.setProperty(entry.getKey(), entry.getValue()));
 
         SpringApplication.run(RestaurantApplication.class, args);
+
     }
 
 }

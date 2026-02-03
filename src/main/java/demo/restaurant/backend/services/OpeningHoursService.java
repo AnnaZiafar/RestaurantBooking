@@ -1,7 +1,7 @@
 package demo.restaurant.backend.services;
 
-import demo.restaurant.backend.entities.OpeningHours;
-import demo.restaurant.backend.entities.Restaurant;
+import demo.restaurant.backend.model.OpeningHours;
+import demo.restaurant.backend.model.Restaurant;
 import demo.restaurant.backend.repositories.OpeningHoursRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

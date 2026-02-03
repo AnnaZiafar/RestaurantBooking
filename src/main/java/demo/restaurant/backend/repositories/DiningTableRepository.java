@@ -1,7 +1,7 @@
 package demo.restaurant.backend.repositories;
 
-import demo.restaurant.backend.entities.DiningTable;
-import demo.restaurant.backend.entities.Restaurant;
+import demo.restaurant.backend.model.DiningTable;
+import demo.restaurant.backend.model.Restaurant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
