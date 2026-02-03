@@ -2,11 +2,14 @@
   {
     "name": "TOSO",
     "category": "Asian",
-    "city": "Göteborg",
-    "address": "Götaplatsen 1",
     "rating": 4.9,
     "meanPrice": 400,
     "imagePath": "toso.png",
+    "address": {
+      "city": "Göteborg",
+      "street": "Götaplatsen",
+      "streetNumber":  "1",
+      "zipcode":  "412 56"},
     "openingHours": [
       {"weekday": "MONDAY", "openingTime": "17:00", "closingTime": "23:00"},
       {"weekday": "TUESDAY", "openingTime": "17:00", "closingTime": "23:00"},
@@ -29,11 +32,14 @@
   {
     "name": "Lilla Taverna",
     "category": "Greek",
-    "city": "Göteborg",
-    "address": "Olivedalsgatan 17",
     "rating": 3.7,
     "meanPrice": 140,
     "imagePath": "lillaTaverna.png",
+    "address": {
+      "city": "Göteborg",
+      "street": "Olivedalsgatan",
+      "streetNumber":  "17",
+      "zipcode":  "413 10"},
     "openingHours": [
       {"weekday": "MONDAY", "openingTime": "16:00", "closingTime": "23:00"},
       {"weekday": "TUESDAY", "openingTime": "16:00", "closingTime": "23:00"},
@@ -56,11 +62,14 @@
   {
     "name": "BASTA",
     "category": "Pasta",
-    "city": "Stockholm",
-    "address": "Mäster Samuelsgatan 59",
     "rating": 4.3,
     "meanPrice": 250,
     "imagePath": "basta.png",
+    "address": {
+      "city": "Stockholm",
+      "street": "Mäster Samuelsgatan",
+      "streetNumber":  "59",
+      "zipcode":  "111 21"},
     "openingHours": [
       {"weekday": "MONDAY", "openingTime": "11:00", "closingTime": "22:30"},
       {"weekday": "TUESDAY", "openingTime": "11:00", "closingTime": "22:30"},
@@ -85,11 +94,14 @@
   {
     "name": "Via Napoli",
     "category": "Pizza",
-    "city": "Malmö",
-    "address": "Sergels väg 11",
     "rating": 4.1,
     "meanPrice": 250,
     "imagePath": "viaNapoli.png",
+    "address": {
+      "city": "Malmö",
+      "street": "Sergels väg",
+      "streetNumber":  "11",
+      "zipcode":  "217 57"},
     "openingHours": [
       {"weekday": "MONDAY", "openingTime": "10:00", "closingTime": "21:00"},
       {"weekday": "TUESDAY", "openingTime": "10:00", "closingTime": "21:00"},
@@ -111,11 +123,14 @@
   {
     "name": "Melo Male Vasastan",
     "category": "Pizza",
-    "city": "Stockholm",
-    "address": "Roslagsgatan 15",
     "rating": 4.5,
     "meanPrice": 150,
     "imagePath": "meloMaleVasastan.png",
+    "address": {
+      "city": "Stockholm",
+      "street": "Roslagsgatan",
+      "streetNumber":  "15",
+      "zipcode":  "113 55"},
     "openingHours": [
       {"weekday": "MONDAY", "openingTime": "10:00", "closingTime": "21:00"},
       {"weekday": "TUESDAY", "openingTime": "10:00", "closingTime": "21:00"},
