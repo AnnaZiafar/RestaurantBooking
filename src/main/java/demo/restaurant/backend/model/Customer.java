@@ -8,7 +8,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "password")
 @NoArgsConstructor
 @Entity
 @Table(name = "customer")
@@ -20,16 +20,16 @@ public class Customer {
     private String firstname;
     private String lastname;
 
-    @Column(unique = true)
-    private String phoneNumber;
-
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
-    public Customer(String firstname, String lastname, String phoneNumber, String email){
+    @Column
+    private String password;
+
+    public Customer(String firstname, String lastname, String email, String password){
         this.firstname = firstname;
         this.lastname = lastname;
-        this.phoneNumber = phoneNumber;
         this.email = email;
+        this.password = password;
     }
 }
