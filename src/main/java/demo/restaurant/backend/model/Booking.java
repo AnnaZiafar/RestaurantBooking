@@ -1,10 +1,7 @@
 package demo.restaurant.backend.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -32,13 +29,15 @@ public class Booking {
     @JoinColumn(name = "table_id")
     private DiningTable table;
 
+    private String firstName;
+    private String lastName;
+    private String email;
+
     private LocalDate date;
     private LocalTime bookingStart;
     private LocalTime bookingEnd;
 
-    public Booking(Customer customer, Restaurant restaurant, DiningTable table,
-                   LocalDate date, LocalTime bookingStart, LocalTime bookingEnd){
-
+    public Booking(Customer customer, Restaurant restaurant, DiningTable table, LocalDate date, LocalTime bookingStart, LocalTime bookingEnd) {
         this.customer = customer;
         this.restaurant = restaurant;
         this.table = table;
@@ -46,6 +45,19 @@ public class Booking {
         this.bookingStart = bookingStart;
         this.bookingEnd = bookingEnd;
 
+        this.firstName = customer.getFirstname();
+        this.lastName = customer.getLastname();
+        this.email = customer.getEmail();
     }
 
+    public Booking(Restaurant restaurant, DiningTable table, String firstName, String lastName, String email, LocalDate date, LocalTime bookingStart, LocalTime bookingEnd) {
+        this.restaurant = restaurant;
+        this.table = table;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.date = date;
+        this.bookingStart = bookingStart;
+        this.bookingEnd = bookingEnd;
+    }
 }
