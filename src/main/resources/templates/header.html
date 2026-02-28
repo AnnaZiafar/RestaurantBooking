@@ -8,29 +8,39 @@
 <body>
     <header class="page-header">
 
-        <div class="logo-container">
-            <img src="/images/logo.png" alt="LOGO">
+        <div class="logo">
+            <a href="/">
+                <span class="dine">Dine</span>
+                <span class="out">Out</span>
+                <img src="/images/logo.png" alt="LOGO">
+            </a>
         </div>
 
-        <div class="city-container">
-            <div class="city-selection">Select a city</div>
-            <div class="city-options">
-                <div>Göteborg</div>
-                <div>Stockholm</div>
-                <div>Malmö</div>
-            </div>
+       <div class="wrapper">
+           <div class="city-container">
+               <div class="city-selection">Välj en stad</div>
+               <div class="city-options">
+                   <div>Göteborg</div>
+                   <div>Stockholm</div>
+                   <div>Malmö</div>
+               </div>
+           </div>
+
+           <div class="restaurant-container">
+               <input type="text"
+                      id="restaurant-search-input"
+                      placeholder="&#128269; Sök efter restaurang..."
+                      class="restaurant-search">
+           </div>
+       </div>
+
+
+        <div class="log-in-container">
+            <button class="log-in-button">
+                <span class="text">&#128100; Logga in</span>
+            </button>
         </div>
 
-        <div class="restaurant-container">
-            <input type="text"
-                   id="restaurant-search-input"
-                   placeholder="🔍 Search for a restaurant..."
-                   class="restaurant-search">
-        </div>
-
-
-        <div class="log-in">
-        </div>
     <script src="/js/script.js"></script>
     </header>
 </body>

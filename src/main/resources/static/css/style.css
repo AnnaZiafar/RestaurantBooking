@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 20px 30px;
+    font-family: Verdana, sans-serif;
 }
 
 .page-header {
@@ -8,13 +9,44 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    max-height: 150px;
+    max-height: 50px;
+    width: 100%;
+    justify-content: space-between;
     display: flex;
 }
 
-.logo-container {
-    max-height: 150vh;
+.logo a{
+    text-decoration: none;
+    color: inherit;
     display: flex;
+    align-items: center;
+    font-family: "Leelawadee UI", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.logo .dine{
+    color: darkred;
+}
+
+.logo .out{
+    color: darkorange;
+    padding-right: 7px;
+}
+
+.logo img{
+    height: 45px;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .city-container{
@@ -28,9 +60,7 @@ body {
     align-items: center;
     padding: 12px 25px;
     font-size: 16px;
-    border-radius: 20px 0 0 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px -2px;
+    border-right: 1px solid #333333;
     cursor: pointer;
     transition: 0.4s ease;
 }
@@ -70,18 +100,40 @@ body {
 }
 
 .restaurant-container{
-    width: 600px;
     position: relative;
+    width: 400px;
 }
 
 .restaurant-search {
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     padding: 12px 25px;
     font-size: 16px;
-    border-radius: 0 20px 20px 0;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px -2px;
+    border: none;
+    outline: none;
     cursor: pointer;
     transition: 0.4s ease;
+    background: transparent;
+}
+
+.log-in-container{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.log-in-button{
+    background-color: darkorange;
+    border: none;
+    border-radius: 10px;
+}
+
+.log-in-button .text{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+    color: black;
+    filter: brightness(0);
 }
