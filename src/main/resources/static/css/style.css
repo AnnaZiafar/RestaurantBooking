@@ -1,86 +1,93 @@
 body {
+    padding: 0;
     margin: 0;
-    padding: 20px 30px;
-    font-family: Verdana, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+
 }
 
-.page-header {
+body, div, input, button, span, textarea {
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    color: black;
+}
+
+header {
     background-color: white;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    max-height: 50px;
-    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 30px;
     justify-content: space-between;
     display: flex;
+    align-items: center;
 }
 
-.logo a{
+.logo{
     text-decoration: none;
-    color: inherit;
     display: flex;
     align-items: center;
-    font-family: "Leelawadee UI", sans-serif;
-    font-weight: bold;
-    font-size: 40px;
+    font-size: 0.9rem;
     letter-spacing: 2px;
 }
 
-.logo .dine{
-    color: darkred;
-}
+.logo .dine{ color: darkred; }
+.logo .out{ color: darkorange; padding-right: 7px; }
 
-.logo .out{
-    color: darkorange;
+.logo img{
+    max-height: 30px;
+    width: auto;
     padding-right: 7px;
 }
 
-.logo img{
-    height: 45px;
-}
-
-.wrapper{
+.search-wrapper{
     display: flex;
     align-items: center;
-    height: fit-content;
-    padding: 0;
+    padding: 5px;
+    margin: 0 30px;
+    flex: 1;
+    min-width: 20px;
+    max-height: 30px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: white;
 }
 
 .city-container{
     position: relative;
-    width: 250px;
+    width: 25%;
 }
 
 .city-selection{
     display: flex;
     justify-content: space-between;
+    padding: 0 10px;
     align-items: center;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-right: 1px solid #333333;
     cursor: pointer;
     transition: 0.4s ease;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .city-selection::after{
     content: '\25BC';
-    font-size: 14px;
     color: #333;
     margin-left: 10px;
 }
 
 .city-options{
     position: absolute;
-    top: 60px;
+    background-color: white;
+    top: 250%;
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
+    overflow: hidden;
 }
 
 .city-options.show{
@@ -91,26 +98,58 @@ body {
 
 .city-options div{
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 0.75rem;
     cursor: pointer;
 }
 
 .city-options div:hover{
-    background-color: rgba(255, 100, 0, 0.3);
+    background-color: rgba(255, 140, 0, 0.3);
+}
+
+.restaurant-container::before{
+    content: "";
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #ccc;
 }
 
 .restaurant-container{
     position: relative;
-    width: 400px;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.search-icon {
+    position: relative;
+    border: 0.1rem solid black;
+    border-radius: 50%;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-top: 13px;
+    margin-left: 30px;
+    flex-shrink: 0;
+}
+
+.search-icon::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 0.6rem;
+    height: 0.1rem;
+    top: 110%;
+    left: 84%;
+    transform: rotate(45deg);
+
 }
 
 .restaurant-search {
     width: 100%;
     box-sizing: border-box;
-    display: flex;
     justify-content: space-between;
     padding: 12px 25px;
-    font-size: 16px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -118,22 +157,45 @@ body {
     background: transparent;
 }
 
-.log-in-container{
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
+.restaurant-container button{
+    background-color: darkorange;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+    cursor: pointer;
+
+    height: 24px;
+    margin: 3px 4px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 8px;
+    align-self: center;
 }
 
+
 .log-in-button{
-    background-color: darkorange;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
     border: none;
     border-radius: 10px;
+    padding: 6px;
+    letter-spacing: 0.02rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.log-in-button img{
+    max-height: 1.5rem;
+    width: auto;
+    padding-right: 0.4rem;
 }
 
 .log-in-button .text{
-    font-size: 12px;
-    font-weight: bold;
-    padding: 10px;
-    color: black;
-    filter: brightness(0);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: darkred;
+    padding-right: 1px;
 }
