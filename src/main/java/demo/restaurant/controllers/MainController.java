@@ -8,6 +8,11 @@ public class MainController {
 
     @GetMapping("/")
     public String index(){
+        return "main";
+    }
+
+    @GetMapping("/get-header")
+    public String getHeader(){
         return "header";
     }
 
