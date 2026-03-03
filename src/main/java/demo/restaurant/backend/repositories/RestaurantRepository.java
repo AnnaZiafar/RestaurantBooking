@@ -7,8 +7,6 @@ import java.util.Set;
 
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
-    Set<Restaurant> findByCityContainingIgnoreCase(String city);
-
     Set<Restaurant> findByCategory(String category);
 
     Set<Restaurant> findByNameContainingIgnoreCase(String name);

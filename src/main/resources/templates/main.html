@@ -8,7 +8,11 @@
 
 <div id="header-placeholder"></div>
 
-<div class="restaurant-container"></div>
+<div class="restaurant-grid">
+    <div class="restaurant-card" th:each="res : ${restaurants}">
+        <img th:src="${res.imagePath}" alt="Restaurangbild">
+    </div>
+</div>
 
 <script src="/js/script.js"></script>
 </body>
