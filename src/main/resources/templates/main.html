@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>DineOut</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-<div id="header-placeholder"></div>
+<div th:replace="~{header :: main-header}"></div>
 
 <div class="restaurant-grid">
     <div class="restaurant-cards" th:each="res : ${restaurants}" th:data-city="${res.address.city}">

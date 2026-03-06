@@ -28,13 +28,3 @@ document.addEventListener('click', (e) => {
         })
     }
 })
-
-function loadHeader(){
-    fetch('/get-header')
-        .then(response => response.text())
-        .then(data =>
-            document.getElementById('header-placeholder').innerHTML = data)
-        .catch(error => console.error('Could not load header', error))
-}
-
-globalThis.addEventListener('DOMContentLoaded', loadHeader);
