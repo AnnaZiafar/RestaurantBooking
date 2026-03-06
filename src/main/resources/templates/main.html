@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>DineOut</title>
@@ -10,7 +10,11 @@
 
 <div class="restaurant-grid">
     <div class="restaurant-card" th:each="res : ${restaurants}">
-        <img th:src="${res.imagePath}" alt="Restaurangbild">
+        <img th:src="@{${res.imagePath}}" alt="Restaurangbild">
+        <div th:class="restaurant-card-info">
+            <span th:text="${res.name}">Namn</span>
+            <span class="restaurant-card-rating" th:text="${res.rating}">Betyg</span>
+        </div>
     </div>
 </div>
 
