@@ -1,3 +1,9 @@
+/**
+ * Handles city selection and filtering of restaurant cards.
+ * Listens for clicks to toggle the visibility of the dropdown menu and updates
+ * the visibility of .restaurant-cards based on the selected data-city attribute.
+ * @listens document:click
+ */
 document.addEventListener('click', (e) => {
     const select = document.querySelector('.city-selection');
     const options = document.querySelector('.city-options');
@@ -14,15 +20,13 @@ document.addEventListener('click', (e) => {
         cards.forEach(card => {
             const city = card.dataset.city.trim();
 
-            if (selectedCity.toLowerCase() === "Välj en stad" || selectedCity.toLowerCase() === city.toLowerCase()) {
+            if (selectedCity === "Välj en stad" || selectedCity.toLowerCase() === city.toLowerCase()) {
                 card.style.display = "block";
             } else {
                 card.style.display = "none";
             }
         })
     }
-
-
 })
 
 function loadHeader(){
