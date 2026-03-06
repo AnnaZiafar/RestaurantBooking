@@ -210,7 +210,7 @@ header {
     justify-items: center;
 }
 
-.restaurant-card {
+.restaurant-cards {
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
@@ -221,11 +221,11 @@ header {
     width: 270px;
 }
 
-.restaurant-card:hover{
+.restaurant-cards:hover{
     scale: 110%;
 }
 
-.restaurant-card img {
+.restaurant-cards img {
     width: 100%;
     height: 150px;
     object-fit: cover;

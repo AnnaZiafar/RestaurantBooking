@@ -9,7 +9,7 @@
 <div id="header-placeholder"></div>
 
 <div class="restaurant-grid">
-    <div class="restaurant-card" th:each="res : ${restaurants}">
+    <div class="restaurant-cards" th:each="res : ${restaurants}" th:data-city="${res.address.city}">
         <img th:src="@{${res.imagePath}}" alt="Restaurangbild">
         <div th:class="restaurant-card-info">
             <span th:text="${res.name}">Namn</span>
