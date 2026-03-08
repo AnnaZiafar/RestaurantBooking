@@ -9,9 +9,8 @@
         <div class="city-container">
             <div class="city-selection">Alla städer</div>
             <div class="city-options">
-                <div>Göteborg</div>
-                <div>Stockholm</div>
-                <div>Malmö</div>
+                <div>Alla städer</div>
+                <div th:each="city : ${cities}" th:text="${city}">Stad</div>
             </div>
         </div>
 

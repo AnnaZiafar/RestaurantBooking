@@ -11,7 +11,7 @@
 
 <div class="restaurant-grid">
     <div class="restaurant-cards" th:each="res : ${restaurants}" th:data-city="${res.address.city}">
-        <img th:src="@{${res.imagePath}}" alt="Restaurangbild">
+        <img th:src="@{${res.imagePath}}" loading="lazy" alt="Restaurangbild">
         <div th:class="restaurant-card-info">
             <span th:text="${res.name}">Namn</span>
             <span class="restaurant-card-rating" th:text="${res.rating}">Betyg</span>

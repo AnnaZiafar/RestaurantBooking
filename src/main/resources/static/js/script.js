@@ -48,7 +48,7 @@ function setupSearch(){
             const restaurantName = card.querySelector('.restaurant-card-info span').textContent.trim().toLowerCase()
             const city = card.dataset.city.trim();
 
-            if(restaurantName.includes(query) && selectedCity === city || selectedCity === 'Alla städer')
+            if(restaurantName.includes(query) && (selectedCity === city || selectedCity === 'Alla städer'))
                 card.style.display = 'block';
             else
                 card.style.display = 'none';
