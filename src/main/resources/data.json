@@ -4,7 +4,7 @@
     "category": "Asian",
     "rating": 4.9,
     "meanPrice": 400,
-    "imagePath": "toso.png",
+    "imagePath": "/images/restaurant/toso.png",
     "address": {
       "city": "Göteborg",
       "street": "Götaplatsen",
@@ -30,11 +30,11 @@
   },
 
   {
-    "name": "Lilla Taverna",
+    "name": "Lilla Tavernan",
     "category": "Greek",
     "rating": 3.7,
     "meanPrice": 140,
-    "imagePath": "lillaTaverna.png",
+    "imagePath": "/images/restaurant/lillaTaverna.png",
     "address": {
       "city": "Göteborg",
       "street": "Olivedalsgatan",
@@ -64,7 +64,7 @@
     "category": "Pasta",
     "rating": 4.3,
     "meanPrice": 250,
-    "imagePath": "basta.png",
+    "imagePath": "/images/restaurant/basta.png",
     "address": {
       "city": "Stockholm",
       "street": "Mäster Samuelsgatan",
@@ -96,7 +96,7 @@
     "category": "Pizza",
     "rating": 4.1,
     "meanPrice": 250,
-    "imagePath": "viaNapoli.png",
+    "imagePath": "/images/restaurant/viaNapoli.png",
     "address": {
       "city": "Malmö",
       "street": "Sergels väg",
@@ -121,11 +121,11 @@
   },
 
   {
-    "name": "Melo Male Vasastan",
+    "name": "Meno Male Vasastan",
     "category": "Pizza",
     "rating": 4.5,
     "meanPrice": 150,
-    "imagePath": "meloMaleVasastan.png",
+    "imagePath": "/images/restaurant/menoMaleVasastan.png",
     "address": {
       "city": "Stockholm",
       "street": "Roslagsgatan",
@@ -147,6 +147,249 @@
       {"tableNumber":  4, "seatCapacity":  2},
       {"tableNumber":  5, "seatCapacity":  2},
       {"tableNumber":  5, "seatCapacity":  2}
+    ]
+  },
+  {
+    "name": "Stuvsta Pizzeria",
+    "category": "Pizza",
+    "rating": 3.2,
+    "meanPrice": 150,
+    "imagePath": "/images/restaurant/stuvstaPizzeria.png",
+    "address": {
+      "city": "Stockholm",
+      "street": "Stationsvägen",
+      "streetNumber":  "27",
+      "zipcode":  "141 40"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "TUESDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "THURSDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "FRIDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "SATURDAY", "openingTime": "10:00", "closingTime": "21:00"},
+      {"weekday": "SUNDAY", "openingTime": "10:00", "closingTime": "21:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  2},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  8},
+      {"tableNumber":  6, "seatCapacity":  8},
+      {"tableNumber":  7, "seatCapacity":  4},
+      {"tableNumber":  8, "seatCapacity":  6}
+    ]
+  },
+  {
+    "name": "Takame",
+    "category": "Asian",
+    "rating": 4.4,
+    "meanPrice": 350,
+    "imagePath": "/images/restaurant/Takame.png",
+    "address": {
+      "city": "Göteborg",
+      "street": "Sankt Eriksgatan",
+      "streetNumber":  "8",
+      "zipcode":  "411 05"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "TUESDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "THURSDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "FRIDAY", "openingTime": "11:00", "closingTime": "23:00"},
+      {"weekday": "SATURDAY", "openingTime": "12:00", "closingTime": "23:00"},
+      {"weekday": "SUNDAY", "openingTime": "13:00", "closingTime": "22:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  2},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  8},
+      {"tableNumber":  6, "seatCapacity":  8},
+      {"tableNumber":  7, "seatCapacity":  4},
+      {"tableNumber":  8, "seatCapacity":  6}
+    ]
+  },
+  {
+    "name": "The Elephant",
+    "category": "Indiskt",
+    "rating": 4.4,
+    "meanPrice": 150,
+    "imagePath": "/images/restaurant/theElephant.png",
+    "address": {
+      "city": "Göteborg",
+      "street": "Redbergsvägen",
+      "streetNumber":  "9",
+      "zipcode":  "416 65"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "TUESDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "THURSDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "FRIDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "SATURDAY", "openingTime": "12:00", "closingTime": "22:00"},
+      {"weekday": "SUNDAY", "openingTime": "13:00", "closingTime": "22:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  4},
+      {"tableNumber":  2, "seatCapacity":  6},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  8},
+      {"tableNumber":  5, "seatCapacity":  2},
+      {"tableNumber":  6, "seatCapacity":  8},
+      {"tableNumber":  7, "seatCapacity":  8}
+    ]
+  },
+  {
+    "name": "Bastard Burgers",
+    "category": "Hamburgare",
+    "rating": 4.0,
+    "meanPrice": 150,
+    "imagePath": "/images/restaurant/bastardBurgers.png",
+    "address": {
+      "city": "Malmö",
+      "street": "Kalendergatan",
+      "streetNumber":  "28",
+      "zipcode":  "416 65"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "TUESDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "THURSDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "FRIDAY", "openingTime": "11:00", "closingTime": "00:00"},
+      {"weekday": "SATURDAY", "openingTime": "11:00", "closingTime": "00:00"},
+      {"weekday": "SUNDAY", "openingTime": "11:00", "closingTime": "22:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  8},
+      {"tableNumber":  2, "seatCapacity":  6},
+      {"tableNumber":  3, "seatCapacity":  4},
+      {"tableNumber":  4, "seatCapacity":  8},
+      {"tableNumber":  5, "seatCapacity":  2},
+      {"tableNumber":  6, "seatCapacity":  2},
+      {"tableNumber":  7, "seatCapacity":  8}
+    ]
+  },
+  {
+    "name": "Burger Mansion",
+    "category": "Hamburgare",
+    "rating": 4.8,
+    "meanPrice": 200,
+    "imagePath": "/images/restaurant/burgerMansion.png",
+    "address": {
+      "city": "Göteborg",
+      "street": "Backavägen",
+      "streetNumber":  "2",
+      "zipcode":  "417 30"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": null, "closingTime": null},
+      {"weekday": "TUESDAY", "openingTime": null, "closingTime": null},
+      {"weekday": "WEDNESDAY", "openingTime": "14:00", "closingTime": "21:00"},
+      {"weekday": "THURSDAY", "openingTime": "11:00", "closingTime": "21:00"},
+      {"weekday": "FRIDAY", "openingTime": "11:00", "closingTime": "21:00"},
+      {"weekday": "SATURDAY", "openingTime": "12:00", "closingTime": "21:00"},
+      {"weekday": "SUNDAY", "openingTime": "13:00", "closingTime": "21:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  4},
+      {"tableNumber":  2, "seatCapacity":  6},
+      {"tableNumber":  3, "seatCapacity":  4},
+      {"tableNumber":  4, "seatCapacity":  8},
+      {"tableNumber":  5, "seatCapacity":  4},
+      {"tableNumber":  6, "seatCapacity":  6}
+    ]
+  },
+  {
+    "name": "Kin Long",
+    "category": "Asian",
+    "rating": 4.5,
+    "meanPrice": 400,
+    "imagePath": "/images/restaurant/kinLong.png",
+    "address": {
+      "city": "Malmö",
+      "street": "Rådmansgatan",
+      "streetNumber":  "1",
+      "zipcode":  "211 46"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": null, "closingTime": null},
+      {"weekday": "TUESDAY", "openingTime": null, "closingTime": null},
+      {"weekday": "WEDNESDAY", "openingTime": "17:00", "closingTime": "23:00"},
+      {"weekday": "THURSDAY", "openingTime": "17:00", "closingTime": "23:00"},
+      {"weekday": "FRIDAY", "openingTime": "17:00", "closingTime": "00:00"},
+      {"weekday": "SATURDAY", "openingTime": "13:00", "closingTime": "00:00"},
+      {"weekday": "SUNDAY", "openingTime": "15:00", "closingTime": "21:30"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  2},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  8},
+      {"tableNumber":  6, "seatCapacity":  8},
+      {"tableNumber":  7, "seatCapacity":  4},
+      {"tableNumber":  8, "seatCapacity":  6}
+    ]
+  },
+  {
+    "name": "Masala & More",
+    "category": "Indisk",
+    "rating": 4.8,
+    "meanPrice": 200,
+    "imagePath": "/images/restaurant/masalaAndMore.png",
+    "address": {
+      "city": "Malmö",
+      "street": "Baltzarsgatan",
+      "streetNumber":  "12",
+      "zipcode":  "211 36"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "11:00", "closingTime": "21:30"},
+      {"weekday": "TUESDAY", "openingTime": "11:00", "closingTime": "21:30"},
+      {"weekday": "WEDNESDAY", "openingTime": "11:00", "closingTime": "21:30"},
+      {"weekday": "THURSDAY", "openingTime": "11:00", "closingTime": "21:30"},
+      {"weekday": "FRIDAY", "openingTime": "11:00", "closingTime": "23:00"},
+      {"weekday": "SATURDAY", "openingTime": "12:30", "closingTime": "23:00"},
+      {"weekday": "SUNDAY", "openingTime": "12:30", "closingTime": "20:30"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  2},
+      {"tableNumber":  2, "seatCapacity":  6},
+      {"tableNumber":  3, "seatCapacity":  8},
+      {"tableNumber":  4, "seatCapacity":  4},
+      {"tableNumber":  5, "seatCapacity":  2},
+      {"tableNumber":  6, "seatCapacity":  6},
+      {"tableNumber":  7, "seatCapacity":  6}
+    ]
+  },
+  {
+    "name": "UNAN",
+    "category": "Indisk",
+    "rating": 4.7,
+    "meanPrice": 200,
+    "imagePath": "/images/restaurant/unan.png",
+    "address": {
+      "city": "Stockholm",
+      "street": "Upplandsgatan",
+      "streetNumber":  "38",
+      "zipcode":  "113 28"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "TUESDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "THURSDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "FRIDAY", "openingTime": "11:00", "closingTime": "22:00"},
+      {"weekday": "SATURDAY", "openingTime": "13:00", "closingTime": "22:00"},
+      {"weekday": "SUNDAY", "openingTime": "13:00", "closingTime": "21:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  2},
+      {"tableNumber":  2, "seatCapacity":  4},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  8},
+      {"tableNumber":  6, "seatCapacity":  8},
+      {"tableNumber":  7, "seatCapacity":  4},
+      {"tableNumber":  8, "seatCapacity":  6}
     ]
   }
 ]

@@ -1,47 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-    <title>Header</title>
-</head>
-<body>
-    <header>
+<header th:fragment="main-header">
+    <a class="logo" href="/">
+        <h1 class="dine">Dine</h1>
+        <h1 class="out">Out</h1>
+        <img src="/images/logo.png" alt="LOGO">
+    </a>
 
-        <a class="logo" href="/">
-            <h1 class="dine">Dine</h1>
-            <h1 class="out">Out</h1>
-            <img src="/images/logo.png" alt="LOGO">
-        </a>
+    <div class="search-wrapper">
+        <div class="city-container">
+            <div class="city-selection">Alla städer</div>
+            <div class="city-options">
+                <div>Alla städer</div>
+                <div th:each="city : ${cities}" th:text="${city}">Stad</div>
+            </div>
+        </div>
 
-       <div class="search-wrapper">
-           <div class="city-container">
-               <div class="city-selection">Välj en stad</div>
-               <div class="city-options">
-                   <div>Göteborg</div>
-                   <div>Stockholm</div>
-                   <div>Malmö</div>
-               </div>
-           </div>
+        <form id="search-container" class="restaurant-search-container">
+            <span class="search-icon"></span>
+            <input type="text"
+                   id="restaurant-search-input"
+                   placeholder="Sök efter kategori eller restaurang..."
+                   class="restaurant-search">
+            <button id="search-button">SÖK</button>
+        </form>
+    </div>
 
-           <div class="restaurant-container">
-               <span class="search-icon"></span>
-               <input type="text"
-                      id="restaurant-search-input"
-                      placeholder="Sök efter kategori eller restaurang..."
-                      class="restaurant-search">
-               <button>SÖK</button>
-           </div>
-       </div>
-
-        <button class="log-in-button">
-            <img src="/images/log-in.png" alt="">
-            <div class="text">LOGGA IN</div>
-        </button>
-
-
-    </header>
-    <script src="/js/script.js"></script>
-</body>
-</html>
+    <button class="log-in-button">
+        <img src="/images/log-in.png" alt="">
+        <span class="text">LOGGA IN</span>
+    </button>
+</header>
