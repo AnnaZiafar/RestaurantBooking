@@ -1,7 +1,7 @@
 [
   {
     "name": "TOSO",
-    "category": "Asian",
+    "category": "ASIATISKT",
     "rating": 4.9,
     "meanPrice": 400,
     "imagePath": "/images/restaurant/toso.png",
@@ -31,7 +31,7 @@
 
   {
     "name": "Lilla Tavernan",
-    "category": "Greek",
+    "category": "GREKISKT",
     "rating": 3.7,
     "meanPrice": 140,
     "imagePath": "/images/restaurant/lillaTaverna.png",
@@ -61,7 +61,7 @@
 
   {
     "name": "BASTA",
-    "category": "Pasta",
+    "category": "PASTA",
     "rating": 4.3,
     "meanPrice": 250,
     "imagePath": "/images/restaurant/basta.png",
@@ -93,7 +93,7 @@
 
   {
     "name": "Via Napoli",
-    "category": "Pizza",
+    "category": "PIZZA",
     "rating": 4.1,
     "meanPrice": 250,
     "imagePath": "/images/restaurant/viaNapoli.png",
@@ -122,7 +122,7 @@
 
   {
     "name": "Meno Male Vasastan",
-    "category": "Pizza",
+    "category": "PIZZA",
     "rating": 4.5,
     "meanPrice": 150,
     "imagePath": "/images/restaurant/menoMaleVasastan.png",
@@ -151,7 +151,7 @@
   },
   {
     "name": "Stuvsta Pizzeria",
-    "category": "Pizza",
+    "category": "PIZZA",
     "rating": 3.2,
     "meanPrice": 150,
     "imagePath": "/images/restaurant/stuvstaPizzeria.png",
@@ -182,7 +182,7 @@
   },
   {
     "name": "Takame",
-    "category": "Asian",
+    "category": "ASIATISKT",
     "rating": 4.4,
     "meanPrice": 350,
     "imagePath": "/images/restaurant/Takame.png",
@@ -213,7 +213,7 @@
   },
   {
     "name": "The Elephant",
-    "category": "Indiskt",
+    "category": "INDISKT",
     "rating": 4.4,
     "meanPrice": 150,
     "imagePath": "/images/restaurant/theElephant.png",
@@ -243,7 +243,7 @@
   },
   {
     "name": "Bastard Burgers",
-    "category": "Hamburgare",
+    "category": "HAMBURGARE",
     "rating": 4.0,
     "meanPrice": 150,
     "imagePath": "/images/restaurant/bastardBurgers.png",
@@ -273,7 +273,7 @@
   },
   {
     "name": "Burger Mansion",
-    "category": "Hamburgare",
+    "category": "HAMBURGARE",
     "rating": 4.8,
     "meanPrice": 200,
     "imagePath": "/images/restaurant/burgerMansion.png",
@@ -302,7 +302,7 @@
   },
   {
     "name": "Kin Long",
-    "category": "Asian",
+    "category": "ASIATISKT",
     "rating": 4.5,
     "meanPrice": 400,
     "imagePath": "/images/restaurant/kinLong.png",
@@ -333,7 +333,7 @@
   },
   {
     "name": "Masala & More",
-    "category": "Indisk",
+    "category": "INDISKT",
     "rating": 4.8,
     "meanPrice": 200,
     "imagePath": "/images/restaurant/masalaAndMore.png",
@@ -363,7 +363,7 @@
   },
   {
     "name": "UNAN",
-    "category": "Indisk",
+    "category": "INDISKT",
     "rating": 4.7,
     "meanPrice": 200,
     "imagePath": "/images/restaurant/unan.png",
