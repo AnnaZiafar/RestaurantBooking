@@ -1,61 +1,68 @@
 const select = document.querySelector('.city-selection');
 const options = document.querySelector('.city-options');
-let selectedCity = null;
+let selectedCity = "Alla städer";
 
 /**
- * Handles city selection and filtering of restaurant cards.
- * Listens for clicks to toggle the visibility of the dropdown menu and updates
- * the visibility of .restaurant-cards based on the selected data-city attribute.
- * @listens document:click
+ * Filters the displayed restaurant cards based on the search query and the selected city.
+ * It combines the text input from the search bar with the current value of the
+ * selectedCity variable to determine which cards should be visible.
  */
-document.addEventListener('click', (e) => {
+function filterRestaurants() {
+    const input = document.getElementById('restaurant-search-input');
+    const query = input ? input.value.trim().toLowerCase() : "";
     const cards = document.querySelectorAll('.restaurant-cards');
 
-    if(e.target.closest('.city-selection')) options.classList.toggle('show');
-    else(options.classList.remove('show'));
+    cards.forEach(card => {
+        const restaurantName = card.querySelector('.restaurant-card-info span').textContent.trim().toLowerCase();
+        const city = card.dataset.city.trim().toLowerCase();
+        const currentCity = selectedCity.toLowerCase();
+
+        const matchesSearch = restaurantName.includes(query);
+        const matchesCity = currentCity === "alla städer" || currentCity === city;
+
+        if (matchesSearch && matchesCity) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+/**
+ * Global click event listener to handle custom dropdown behavior.
+ * Toggles the visibility of the city options menu when clicking the selection box.
+ * Closes the menu when clicking outside the dropdown or when a city has been chosen.
+ * Updates the selected city and triggers a re-filter of restaurants when an option is selected.
+ * @param {MouseEvent} e - The click event object.
+ */
+document.addEventListener('click', (e) => {
+    if(e.target.closest('.city-selection')) {
+        options.classList.toggle('show');
+    } else {
+        options.classList.remove('show');
+    }
 
     if(e.target.closest('.city-options div')){
         selectedCity = e.target.textContent.trim();
         select.textContent = selectedCity;
-        options.classList.remove('show')
+        options.classList.remove('show');
 
-        cards.forEach(card => {
-            const city = card.dataset.city.trim();
-
-            if (selectedCity === "Alla städer" || selectedCity.toLowerCase() === city.toLowerCase()) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        })
+        filterRestaurants();
     }
-})
+});
 
-/**
- * Handles searching/filtering of restaurants based on name or category.
- * Listens for both button clicks and Enter key presses.
- */
 function setupSearch(){
-    const input = document.getElementById('restaurant-search-input');
     const searchContainer = document.getElementById('search-container');
-    const cards = document.querySelectorAll('.restaurant-cards');
 
-    const performSearch = (e) => {
-        if (e.type === 'submit') e.preventDefault()
-        const query = input.value.trim().toLowerCase();
-
-        cards.forEach(card => {
-            const restaurantName = card.querySelector('.restaurant-card-info span').textContent.trim().toLowerCase()
-            const city = card.dataset.city.trim();
-
-            if(restaurantName.includes(query) && (selectedCity === city || selectedCity === 'Alla städer'))
-                card.style.display = 'block';
-            else
-                card.style.display = 'none';
-        })
+    if(searchContainer) {
+        searchContainer.addEventListener('submit', (e) => {
+            e.preventDefault();
+            filterRestaurants();
+        });
     }
-
-    if(searchContainer) searchContainer.addEventListener('submit', performSearch)
 }
 
-document.addEventListener('DOMContentLoaded', setupSearch);
+document.addEventListener('DOMContentLoaded', () => {
+    setupSearch();
+    filterRestaurants();
+});
