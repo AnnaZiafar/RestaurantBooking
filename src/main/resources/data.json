@@ -391,5 +391,92 @@
       {"tableNumber":  7, "seatCapacity":  4},
       {"tableNumber":  8, "seatCapacity":  6}
     ]
+  },
+  {
+    "name": "Koh Phangan",
+    "category": "THAI",
+    "rating": 4.1,
+    "meanPrice": 300,
+    "imagePath": "/images/restaurant/kohPhangan.png",
+    "address": {
+      "city": "Stockholm",
+      "street": "Skånegatan",
+      "streetNumber":  "57",
+      "zipcode":  "116 37"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "TUESDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "THURSDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "FRIDAY", "openingTime": "16:00", "closingTime": "01:00"},
+      {"weekday": "SATURDAY", "openingTime": "12:00", "closingTime": "01:00"},
+      {"weekday": "SUNDAY", "openingTime": "12:00", "closingTime": "23:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  4},
+      {"tableNumber":  2, "seatCapacity":  8},
+      {"tableNumber":  3, "seatCapacity":  4},
+      {"tableNumber":  4, "seatCapacity":  2},
+      {"tableNumber":  5, "seatCapacity":  6},
+      {"tableNumber":  6, "seatCapacity":  6},
+      {"tableNumber":  7, "seatCapacity":  8}
+    ]
+  },
+  {
+    "name": "Moon Thai",
+    "category": "THAI",
+    "rating": 4.3,
+    "meanPrice": 300,
+    "imagePath": "/images/restaurant/moonThai.png",
+    "address": {
+      "city": "Göteborg",
+      "street": "Kristinelundsgatan",
+      "streetNumber":  "9",
+      "zipcode":  "411 37"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "TUESDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "THURSDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "FRIDAY", "openingTime": "16:00", "closingTime": "01:00"},
+      {"weekday": "SATURDAY", "openingTime": "15:00", "closingTime": "01:00"},
+      {"weekday": "SUNDAY", "openingTime": "15:00", "closingTime": "23:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  4},
+      {"tableNumber":  2, "seatCapacity":  2},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  6},
+      {"tableNumber":  5, "seatCapacity":  6},
+      {"tableNumber":  6, "seatCapacity":  8}
+    ]
+  },
+  {
+    "name": "Green Mango",
+    "category": "THAI",
+    "rating": 4.0,
+    "meanPrice": 200,
+    "imagePath": "/images/restaurant/greenMango.png",
+    "address": {
+      "city": "Malmö",
+      "street": "Fersens väg",
+      "streetNumber":  "5",
+      "zipcode":  "211 48"},
+    "openingHours": [
+      {"weekday": "MONDAY", "openingTime": "16:00", "closingTime": "21:00"},
+      {"weekday": "TUESDAY", "openingTime": "16:00", "closingTime": "21:00"},
+      {"weekday": "WEDNESDAY", "openingTime": "16:00", "closingTime": "21:00"},
+      {"weekday": "THURSDAY", "openingTime": "16:00", "closingTime": "21:00"},
+      {"weekday": "FRIDAY", "openingTime": "16:00", "closingTime": "23:00"},
+      {"weekday": "SATURDAY", "openingTime": "15:00", "closingTime": "23:00"},
+      {"weekday": "SUNDAY", "openingTime": "15:00", "closingTime": "21:00"}
+    ],
+    "tables": [
+      {"tableNumber":  1, "seatCapacity":  4},
+      {"tableNumber":  2, "seatCapacity":  2},
+      {"tableNumber":  3, "seatCapacity":  6},
+      {"tableNumber":  4, "seatCapacity":  6},
+      {"tableNumber":  5, "seatCapacity":  4}
+    ]
   }
 ]
