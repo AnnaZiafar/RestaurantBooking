@@ -9,6 +9,15 @@
 
 <div th:replace="~{header :: main-header}"></div>
 
+<div class="category-section-wrapper">
+    <div class="category-container">
+        <div class="category-cards" th:each="cat : ${categories}">
+            <img th:src="@{'/images/categories/' + ${cat.toString().toLowerCase()} + '.png'}" th:alt="${cat}">
+            <span th:text="${cat}">Kategori</span>
+        </div>
+    </div>
+</div>
+
 <div class="restaurant-grid">
     <div class="restaurant-cards" th:each="res : ${restaurants}" th:data-city="${res.address.city}">
         <img th:src="@{${res.imagePath}}" loading="lazy" alt="Restaurangbild">

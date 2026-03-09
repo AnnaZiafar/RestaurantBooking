@@ -38,7 +38,9 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<DiningTable> tables = new HashSet<>();
 
+    @Enumerated(EnumType.STRING)
     private Category category;
+
     private double rating;
     private double meanPrice;
     private String imagePath;
@@ -52,13 +54,4 @@ public class Restaurant {
         this.imagePath = imagePath;
     }
 
-    public void addOpeningHours(OpeningHours openingHours){
-        this.openingHours.add(openingHours);
-        openingHours.getRestaurants().add(this);
-    }
-
-    public void addTable(DiningTable table){
-        this.tables.add(table);
-        table.setRestaurant(this);
-    }
 }
