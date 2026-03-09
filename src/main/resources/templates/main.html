@@ -11,6 +11,10 @@
 
 <div class="category-section-wrapper">
     <div class="category-container">
+        <div class="category-cards">
+            <img src="/images/categories/allaKategorier.png" alt="ALLA KATEGORIER">
+            <span>Alla kategorier</span>
+        </div>
         <div class="category-cards" th:each="cat : ${categories}">
             <img th:src="@{'/images/categories/' + ${cat.toString().toLowerCase()} + '.png'}" th:alt="${cat}">
             <span th:text="${cat}">Kategori</span>
@@ -19,7 +23,7 @@
 </div>
 
 <div class="restaurant-grid">
-    <div class="restaurant-cards" th:each="res : ${restaurants}" th:data-city="${res.address.city}">
+    <div class="restaurant-cards" th:each="res : ${restaurants}" th:data-city="${res.address.city}" th:data-category="${res.category}">
         <img th:src="@{${res.imagePath}}" loading="lazy" alt="Restaurangbild">
         <div th:class="restaurant-card-info">
             <span th:text="${res.name}">Namn</span>
