@@ -10,7 +10,10 @@
 <div th:replace="~{header :: main-header}"></div>
 
 <div class="category-section-wrapper">
-    <div class="category-container">
+    <button type="button" class="category-scroll" id="prevCtgBtn">
+        <span class="arrow left"></span>
+    </button>
+    <div class="category-container" id="categoryContainer">
         <div class="category-cards">
             <img src="/images/categories/allaKategorier.png" alt="ALLA KATEGORIER">
             <span>Alla kategorier</span>
@@ -20,6 +23,9 @@
             <span th:text="${cat}">Kategori</span>
         </div>
     </div>
+    <button type="button" class="category-scroll right" id="nextCtgBtn">
+        <span class="arrow right"></span>
+    </button>
 </div>
 
 <div class="restaurant-grid">

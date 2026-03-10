@@ -1,5 +1,7 @@
 const select = document.querySelector('.city-selection');
 const options = document.querySelector('.city-options');
+const searchInput = document.getElementById('restaurant-search-input');
+
 let selectedCity = "Alla städer";
 let selectedCategory = "Alla kategorier";
 
@@ -9,7 +11,6 @@ let selectedCategory = "Alla kategorier";
  * selectedCity variable to determine which cards should be visible.
  */
 function filterRestaurants() {
-    const searchInput = document.getElementById('restaurant-search-input');
     const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
     const cards = document.querySelectorAll('.restaurant-cards');
 
@@ -34,6 +35,52 @@ function filterRestaurants() {
 
         card.style.display = visible ? "block" : "none";
     });
+}
+
+/**
+ * Initializes and manages a horizontal category slider with dynamic navigation controls.
+ * * This function handles:
+ * - Smooth horizontal scrolling via navigation buttons.
+ * - Dynamic visibility of "Previous" and "Next" buttons based on scroll position.
+ * - Early exit if required DOM elements (container or buttons) are not found.
+ * @returns {void}
+ */
+function setupCategorySlider() {
+    const container = document.getElementById('categoryContainer');
+    const prevBtn = document.getElementById('prevCtgBtn');
+    const nextBtn = document.getElementById('nextCtgBtn');
+
+    if (!container) return;
+
+    const updateArrowVisibility = () => {
+        const scrollLeft = container.scrollLeft;
+        // MaxScroll is the whole content minus width
+        const maxScroll = container.scrollWidth - container.clientWidth;
+
+        // Only show prevBtn after client scrolls
+        if (scrollLeft > 0) {
+            prevBtn.classList.add('visible');
+        } else {
+            prevBtn.classList.remove('visible');
+        }
+
+        if (scrollLeft < maxScroll) {
+            nextBtn.classList.add('visible');
+        } else {
+            nextBtn.classList.remove('visible');
+        }
+    };
+
+    nextBtn.addEventListener('click', () => {
+        container.scrollBy({ left: 1100, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+        container.scrollBy({ left: -1100, behavior: 'smooth' });
+    });
+
+    container.addEventListener('scroll', updateArrowVisibility);
+    updateArrowVisibility();
 }
 
 /**
@@ -72,6 +119,7 @@ document.addEventListener('click', (e) => {
     const clickedCard = e.target.closest('.category-cards');
 
     if(clickedCard){
+        searchInput.value = '';
         selectedCategory = clickedCard.textContent.trim();
         filterRestaurants();
     }
@@ -90,5 +138,6 @@ function setupSearch(){
 
 document.addEventListener('DOMContentLoaded', () => {
     setupSearch();
+    setupCategorySlider();
     filterRestaurants();
 });
