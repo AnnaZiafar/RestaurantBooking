@@ -6,12 +6,14 @@ public enum Category {
     HAMBURGARE,
     INDISKT,
     ASIATISKT,
+    AFRIKANSKT,
     KEBAB,
     THAI,
     SUSHI,
     SKANDINAVISKT,
     MEXIKANSKT,
     GREKISKT,
-    PERSISKT,
-    STEAKHOUSE,
+    MELLANÖSTERN,
+    EUROPEISKT,
+    STEAKHOUSE
 }
