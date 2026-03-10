@@ -1,5 +1,6 @@
 package demo.restaurant.controllers;
 
+import demo.restaurant.backend.enums.Category;
 import demo.restaurant.backend.services.RestaurantService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +31,7 @@ public class RestaurantController {
     @GetMapping("/")
     public String loadRestaurants(Model model){
         model.addAttribute("restaurants", restaurantService.getAll());
+        model.addAttribute("categories", Category.values());
         return "main";
     }
 

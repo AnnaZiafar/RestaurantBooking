@@ -1,6 +1,5 @@
 package demo.restaurant.backend.services;
 
-import demo.restaurant.backend.model.Address;
 import demo.restaurant.backend.model.Restaurant;
 import demo.restaurant.backend.repositories.RestaurantRepository;
 import org.springframework.stereotype.Service;
