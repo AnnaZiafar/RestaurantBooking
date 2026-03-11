@@ -8,6 +8,7 @@ const Main = () => {
     const [selectedCity, setSelectedCity] = useState("Alla städer");
     const [selectedCategory, setSelectedCategory] = useState("Alla kategorier");
     const [searchQuery, setSearchQuery] = useState("");
+    const [searchResult, setSearchResult] = useState("");
 
     const categoryContainerRef = useRef(null);
 
@@ -22,21 +23,37 @@ const Main = () => {
             .catch(err => console.error("Kunde inte hämta data:", err));
     }, []);
 
-    // Den kombinerade filterlogiken
-    const filteredRestaurants = restaurants.filter(res => {
-        const matchesSearch = res.name.toLowerCase().includes(searchQuery.toLowerCase());
-        const cityMatch = selectedCity === "Alla städer" || res.address.city === selectedCity;
-        const categoryMatch = selectedCategory === "Alla kategorier" || res.category === selectedCategory;
+    const handleSearch = (e) => {
+        if (e) e.preventDefault();
+        setSearchResult(searchQuery);
+        setSearchQuery("");
+    }
 
-        if (searchQuery.length > 0) {
-            return matchesSearch && cityMatch;
-        }
-        return categoryMatch && cityMatch;
-    });
+    const clearSearch = () => {
+        setSearchQuery("");
+        setSearchResult("");
+    };
+
+    const handleCategoryClick = (category) => {
+        setSelectedCategory(category);
+        clearSearch();
+    }
 
     const scroll = (offset) => {
         categoryContainerRef.current?.scrollBy({ left: offset, behavior: 'smooth' });
     };
+
+    const filteredRestaurants = restaurants.filter(res => {
+        const matchesSearch = res.name.toLowerCase().includes(searchResult.toLowerCase());
+        const cityMatch = selectedCity === "Alla städer" || res.address.city === selectedCity;
+        const categoryMatch = selectedCategory === "Alla kategorier" || res.category === selectedCategory;
+
+        if (searchResult !== "") {
+            return matchesSearch && cityMatch;
+        }
+        return categoryMatch && cityMatch;
+
+    });
 
     return (
         <div className="app-container">
@@ -46,25 +63,26 @@ const Main = () => {
                 setSelectedCity={setSelectedCity}
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
+                onSearch={handleSearch}
             />
 
             <div className="category-section-wrapper">
-                <button className="category-scroll" onClick={() => scroll(-1100)}>
+                <button className="category-scroll left visible" onClick={() => scroll(-1100)}>
                     <span className="arrow left"></span>
                 </button>
                 <div className="category-container" ref={categoryContainerRef}>
-                    <div className="category-cards" onClick={() => {setSelectedCategory("Alla kategorier"); setSearchQuery("");}}>
+                    <div className="category-cards" onClick={() => {handleCategoryClick("Alla kategorier");}}>
                         <img src="/images/categories/allaKategorier.png" alt="ALLA" />
                         <span>Alla kategorier</span>
                     </div>
                     {categories?.map(cat => (
-                        <div key={cat} className="category-cards" onClick={() => {setSelectedCategory(cat); setSearchQuery("");}}>
+                        <div key={cat} className="category-cards" onClick={() => {handleCategoryClick(cat);}}>
                             <img src={`/images/categories/${cat.toLowerCase()}.png`} alt={cat} />
                             <span>{cat}</span>
                         </div>
                     ))}
                 </div>
-                <button className="category-scroll right" onClick={() => scroll(1100)}>
+                <button className="category-scroll right visible" onClick={() => scroll(1100)}>
                     <span className="arrow right"></span>
                 </button>
             </div>

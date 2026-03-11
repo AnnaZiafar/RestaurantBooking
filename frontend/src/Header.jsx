@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 
-const Header = ({ cities, selectedCity, setSelectedCity, searchQuery, setSearchQuery }) => {
+const Header = ({ cities, selectedCity, setSelectedCity, searchQuery, setSearchQuery, onSearch}) => {
     const [isCityOpen, setIsCityOpen] = useState(false);
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            onSearch();
+        }
+    };
 
     return (
         <header className="main-header">
@@ -34,12 +40,13 @@ const Header = ({ cities, selectedCity, setSelectedCity, searchQuery, setSearchQ
                     <span className="search-icon"></span>
                     <input
                         type="text"
-                        placeholder="Sök efter kategori eller restaurang..."
+                        placeholder="Sök efter en restaurang..."
                         className="restaurant-search"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
+                        onKeyDown={handleKeyDown}
                     />
-                    <button id="search-button">SÖK</button>
+                    <button id="search-button" onClick={onSearch}>SÖK</button>
                 </div>
             </div>
 
