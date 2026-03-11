@@ -1,0 +1,27 @@
+package demo.restaurant.repository;
+
+import demo.restaurant.model.OpeningHours;
+import demo.restaurant.model.Restaurant;
+import demo.restaurant.enums.Weekday;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.time.LocalTime;
+import java.util.Optional;
+
+public interface OpeningHoursRepository extends JpaRepository<OpeningHours, Long> {
+
+    Optional<OpeningHours> findByWeekdayAndOpeningTimeAndClosingTime(
+            Weekday weekday, LocalTime openingTime, LocalTime closingTime);
+
+
+    @Query("SELECT r FROM OpeningHours r " +
+    "WHERE :restaurant MEMBER OF r.restaurants " +
+    "AND r.weekday = :weekday")
+    Optional<OpeningHours> findOpeningHoursByRestaurantAndWeekday(
+            @Param("restaurant") Restaurant restaurant,
+            @Param("weekday") Weekday weekday
+    ) ;
+
+}
