@@ -146,7 +146,7 @@
       {"tableNumber":  3, "seatCapacity":  6},
       {"tableNumber":  4, "seatCapacity":  2},
       {"tableNumber":  5, "seatCapacity":  2},
-      {"tableNumber":  5, "seatCapacity":  2}
+      {"tableNumber":  6, "seatCapacity":  6}
     ]
   },
   {
@@ -185,7 +185,7 @@
     "category": "ASIATISKT",
     "rating": 4.4,
     "meanPrice": 350,
-    "imagePath": "/images/restaurant/Takame.png",
+    "imagePath": "/images/restaurant/takame.png",
     "address": {
       "city": "Göteborg",
       "street": "Sankt Eriksgatan",
