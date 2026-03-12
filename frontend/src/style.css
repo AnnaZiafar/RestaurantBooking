@@ -1,9 +1,18 @@
-body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
+:root {
+    --header-height: 5.5rem;
+    --primary: darkred;
+    --secondary: darkorange;
+    --text: black;
+    --background: white;
+    --border: #ccc;
+    --shadow-soft: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-hard: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --transition: 0.4s ease;
+    --radius-smal: 10px;
 }
+
+* {box-sizing: border-box; margin: 0; padding: 0;}
+.page-width{ width: 100%; margin: 0 auto; padding: 0 2rem; }
 
 body, div, input, button, span, textarea {
     font-family: "Inter", sans-serif;
@@ -11,105 +20,87 @@ body, div, input, button, span, textarea {
     color: black;
 }
 
+/*HEADER AND LOGO*/
 header {
     position: fixed;
-    height: 60px;
+    height: var(--header-height);
     top: 0;
     left: 0;
     right: 0;
 
-    background-color: white;
+    background-color: var(--background);
     background-repeat: no-repeat;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    padding: 4% 3%;
-    justify-content: space-between;
+    box-shadow: var(--shadow-soft);
     display: flex;
     align-items: center;
     z-index: 1000;
 }
 
+.header-elements{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .logo{
     text-decoration: none;
     display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.1rem;
 }
 
 .logo .dine{ color: darkred; }
 .logo .out{ color: darkorange; padding-right: 7px; }
+.logo img{ max-height: 30px; width: auto;}
 
-.logo img{
-    max-height: 30px;
-    width: auto;
-    padding-right: 7px;
-}
-
+/*SEARCHBAR - CITY-SELECTION AND RESTAURANT_SEARCH*/
 .search-wrapper{
     display: flex;
     align-items: center;
-    padding: 5px;
-    margin: 0 30px;
+    margin: 0 2.5rem;
     flex: 1;
-    min-width: 20px;
-    max-height: 30px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background-color: white;
+    min-width: 200px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-smal);
+    box-shadow: var(--shadow-hard);
+    background-color: var(--background);
+    cursor: pointer;
+    text-wrap: nowrap;
 }
 
-.city-container{
-    position: relative;
-    width: 25%;
+@media (max-width: 850px) {
+    .search-wrapper{
+        display: none;
+    }
 }
+
+.city-container{ position: relative; width: 25%;}
 
 .city-selection{
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.4s ease;
-    overflow: hidden;
-    white-space: nowrap;
+    transition: var(--transition);
+    padding: 0 1rem;
 }
 
-.city-selection::after{
-    content: '\25BC';
-    color: #333;
-    margin-left: 10px;
-}
+.city-selection::after{ content: '\25BC'; color: #333;}
 
 .city-options{
     position: absolute;
-    background-color: white;
-    top: 250%;
+    background-color: var(--background);
+    top: calc(100% + 20px);
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-smal);
+    box-shadow: var(--shadow-hard);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     overflow: hidden;
 }
 
-.city-options.show{
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+.city-options.show{ opacity: 1; visibility: visible; transform: translateY(0);}
 
-.city-options div{
-    padding: 10px 20px;
-    font-size: 0.75rem;
-    cursor: pointer;
-}
-
-.city-options div:hover{
-    background-color: rgba(255, 140, 0, 0.3);
-}
+.city-options div{ padding: 0.7rem 1rem; font-size: 0.75rem; cursor: pointer;}
+.city-options div:hover{ background-color: rgb(from var(--secondary) r g b / 0.3);}
 
 .restaurant-search-container::before{
     content: "";
@@ -117,14 +108,21 @@ header {
     top: 20%;
     height: 60%;
     width: 1px;
-    background-color: #ccc;
+    background-color: var(--border);
 }
 
-.restaurant-search-container{
-    position: relative;
-    flex: 1;
-    display: flex;
-    overflow: hidden;
+.restaurant-search-container{ position: relative; flex: 1; display: flex; }
+
+.restaurant-search {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: var(--transition);
+    background: transparent;
 }
 
 .search-icon {
@@ -133,56 +131,43 @@ header {
     border-radius: 50%;
     width: 0.6rem;
     height: 0.6rem;
-    margin-top: 13px;
-    margin-left: 30px;
+    margin-top: 0.9rem;
+    margin-left: 1rem;
     flex-shrink: 0;
 }
 
 .search-icon::after {
     content: "";
     position: absolute;
-    background-color: black;
+    background-color: var(--text);
     width: 0.6rem;
     height: 0.1rem;
-    top: 110%;
+    top: 114%;
     left: 84%;
     transform: rotate(45deg);
-
-}
-
-.restaurant-search {
-    width: 100%;
-    box-sizing: border-box;
-    justify-content: space-between;
-    padding: 12px 25px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: 0.4s ease;
-    background: transparent;
 }
 
 .restaurant-search-container button{
-    background-color: darkorange;
+    background-color: var(--secondary);
     color: white;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.04rem;
     cursor: pointer;
 
-    height: 24px;
-    margin: 3px 4px;
+    height: 1.7rem;
     padding: 0 10px;
+    margin-right: 0.4rem;
     border: none;
     border-radius: 8px;
     align-self: center;
 }
 
-
+/*LOGIN*/
 .log-in-button{
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: var(--background);
     cursor: pointer;
     border: none;
     border-radius: 10px;
@@ -192,64 +177,46 @@ header {
     flex-shrink: 0;
 }
 
-.log-in-button img{
-    max-height: 1.5rem;
-    width: auto;
-    padding-right: 0.4rem;
-}
+.log-in-button img{ max-height: 25px; width: auto; padding-right: 0.4rem; }
+.log-in-button .text{ font-size: 0.8rem; font-weight: 700; color: var(--primary); }
 
-.log-in-button .text{
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: darkred;
-    padding-right: 1px;
-}
 
-.category-section-wrapper {
-    display: flex;
-    position: relative;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/*CATEGORIES*/
+.category-section-wrapper { position: relative; margin-top: calc(var(--header-height) + 1rem); overflow: hidden}
 
 .category-container {
     display: flex;
-    overflow-x: hidden;
     gap: 20px;
-    margin-top: 110px;
-    padding: 20px 5px;
+    padding: 1.2rem 0.6rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .category-scroll{
     display: none;
     position: absolute;
     z-index: 100;
-    top: 60%;
+    top: 30%;
 
     width: 40px;
     height: 40px;
     border-width: 1px;
-    border-color: darkorange;
+    border-color: var(--secondary);
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--background);
     cursor: pointer;
 
     align-items: center;
     justify-content: center;
 }
 
-.category-scroll.left {left: -20px;}
-.category-scroll.right {right: -20px;}
-
-.category-scroll.visible {
-    display: flex;
-}
+.category-scroll.left {left: 1rem;}
+.category-scroll.right {right: 1rem;}
+.category-scroll.visible { display: flex; }
 
 .arrow{
-    border: solid darkorange;
+    border: solid var(--secondary);
     border-width: 0 4px 4px 0;
     display: inline-block;
     padding: 5px;
@@ -261,12 +228,13 @@ header {
 
 .category-cards {
     flex: 0 0 120px;
+    /*Same background color as the picture above*/
     background-color: rgb(248, 248, 248);
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    height: 130px;
+    box-shadow: var(--shadow-hard);
+    height: 8.2rem;
     text-align: center;
 }
 
@@ -277,40 +245,45 @@ header {
 }
 
 .category-cards span {
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: bold;
-    color: darkred;
+    color: var(--primary);
     display: block;
     padding: 5px 0;
 }
 
+/*RESTAURANTS*/
 .restaurant-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 0.5fr));
-    gap: 20px;
-    background-color: white;
-    padding: 2rem 3%;
+    grid-template-columns: 1fr;
+    background-color: var(--background);
+    width: 100%;
+    gap: 1rem;
+    padding-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+    }
 }
 
 .restaurant-cards {
-    background-color: white;
+    background-color: var(--background);
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow-hard);
     transition: transform 0.2s;
-    height: 200px;
-    width: 275px;
-    margin: 0 auto;
+    height: 12rem;
 }
 
-.restaurant-cards:hover, .category-cards:hover{
-    scale: 110%;
-}
+.restaurant-cards:hover, .category-cards:hover{ scale: 110%; }
 
 .restaurant-cards img {
     width: 100%;
-    height: 150px;
+    height: 75%;
     object-fit: cover;
     display: block;
 }
@@ -325,7 +298,7 @@ header {
 
 .restaurant-card-rating::after{
     content: "★";
-    color: darkred;
+    color: var(--primary);
     font-size: 1.1rem;
     padding-left: 5px;
 }
