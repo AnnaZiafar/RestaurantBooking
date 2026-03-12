@@ -83,11 +83,11 @@ const Main = () => {
                 onSearch={handleSearch}
             />
 
-            <div className="category-section-wrapper">
-                <button className={`category-scroll left ${canScroll.left ? 'visible' : ''}`} onClick={() => scroll(-1100)}>
-                    <span className="arrow left"></span>
-                </button>
+            <div className="category-section-wrapper page-width">
                 <div className="category-container" ref={categoryContainerRef} onScroll={checkScroll}>
+                    <button className={`category-scroll left ${canScroll.left ? 'visible' : ''}`} onClick={() => scroll(-1100)}>
+                        <span className="arrow left"></span>
+                    </button>
                     <div className="category-cards" onClick={() => {handleCategoryClick("Alla kategorier");}}>
                         <img src="/images/categories/allaKategorier.png" alt="ALLA" />
                         <span>Alla kategorier</span>
@@ -98,13 +98,13 @@ const Main = () => {
                             <span>{cat}</span>
                         </div>
                     ))}
+                    <button className={`category-scroll right ${canScroll.right ? 'visible' : ''}`} onClick={() => scroll(1100)}>
+                        <span className="arrow right"></span>
+                    </button>
                 </div>
-                <button className={`category-scroll right ${canScroll.right ? 'visible' : ''}`} onClick={() => scroll(1100)}>
-                    <span className="arrow right"></span>
-                </button>
             </div>
 
-            <div className="restaurant-grid">
+            <div className="restaurant-grid page-width">
                 {(filteredRestaurants || []).map(res => (
                     <div key={res.id} className="restaurant-cards">
                         <img src={res.imagePath} loading="lazy" alt={res.name} />
