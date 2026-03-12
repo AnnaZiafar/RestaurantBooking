@@ -5,12 +5,14 @@ const Main = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [categories, setCategories] = useState([]);
     const [cities, setCities] = useState([]);
-    const [selectedCity, setSelectedCity] = useState("Alla städer");
-    const [selectedCategory, setSelectedCategory] = useState("Alla kategorier");
-    const [searchQuery, setSearchQuery] = useState("");
-    const [searchResult, setSearchResult] = useState("");
-
     const categoryContainerRef = useRef(null);
+
+    let [selectedCity, setSelectedCity] = useState("Alla städer");
+    let [selectedCategory, setSelectedCategory] = useState("Alla kategorier");
+    let [searchQuery, setSearchQuery] = useState("");
+    let [searchResult, setSearchResult] = useState("");
+    let [canScroll, setCanScroll] = useState({left : false, right :false});
+
 
     useEffect(() => {
         fetch('/api/init-data')
@@ -22,6 +24,10 @@ const Main = () => {
             })
             .catch(err => console.error("Kunde inte hämta data:", err));
     }, []);
+
+    useEffect(() => {
+        checkScroll();
+    }, [categories]);
 
     const handleSearch = (e) => {
         if (e) e.preventDefault();
@@ -37,6 +43,17 @@ const Main = () => {
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
         clearSearch();
+    }
+
+    const checkScroll = () => {
+        const container = categoryContainerRef.current;
+        if(container) {
+            const { scrollLeft, scrollWidth, clientWidth } = container;
+            setCanScroll({
+                left: scrollLeft > 0,
+                right: scrollLeft + clientWidth < scrollWidth
+            })
+        }
     }
 
     const scroll = (offset) => {
@@ -67,10 +84,10 @@ const Main = () => {
             />
 
             <div className="category-section-wrapper">
-                <button className="category-scroll left visible" onClick={() => scroll(-1100)}>
+                <button className={`category-scroll left ${canScroll.left ? 'visible' : ''}`} onClick={() => scroll(-1100)}>
                     <span className="arrow left"></span>
                 </button>
-                <div className="category-container" ref={categoryContainerRef}>
+                <div className="category-container" ref={categoryContainerRef} onScroll={checkScroll}>
                     <div className="category-cards" onClick={() => {handleCategoryClick("Alla kategorier");}}>
                         <img src="/images/categories/allaKategorier.png" alt="ALLA" />
                         <span>Alla kategorier</span>
@@ -82,7 +99,7 @@ const Main = () => {
                         </div>
                     ))}
                 </div>
-                <button className="category-scroll right visible" onClick={() => scroll(1100)}>
+                <button className={`category-scroll right ${canScroll.right ? 'visible' : ''}`} onClick={() => scroll(1100)}>
                     <span className="arrow right"></span>
                 </button>
             </div>
