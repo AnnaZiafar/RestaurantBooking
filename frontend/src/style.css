@@ -6,13 +6,14 @@
     --background: white;
     --border: #ccc;
     --shadow-soft: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 3px 10px rgba(0, 0, 0, 0.2);
     --shadow-hard: 0 4px 15px rgba(0, 0, 0, 0.3);
     --transition: 0.4s ease;
     --radius-smal: 10px;
 }
 
 * {box-sizing: border-box; margin: 0; padding: 0;}
-.page-width{ width: 100%; margin: 0 auto; padding: 0 2rem; }
+.page-width{ width: 100%; margin: 0 auto; padding: 0 2rem }
 
 body, div, input, button, span, textarea {
     font-family: "Inter", sans-serif;
@@ -183,6 +184,8 @@ header {
 
 /*CATEGORIES*/
 .category-section-wrapper { position: relative; margin-top: calc(var(--header-height) + 1rem); overflow: hidden}
+.category-section-wrapper.page-width.at-start { padding-left: 1.25rem; }
+.category-section-wrapper.page-width.at-end { padding-right: 1.25rem; }
 
 .category-container {
     display: flex;
@@ -233,7 +236,7 @@ header {
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: var(--shadow-hard);
+    box-shadow: var(--shadow-medium);
     height: 8.2rem;
     text-align: center;
 }
@@ -255,18 +258,12 @@ header {
 /*RESTAURANTS*/
 .restaurant-grid{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, 275px);
+    justify-content: space-between;
     background-color: var(--background);
     width: 100%;
     gap: 1rem;
     padding-top: 2rem;
-}
-
-@media (min-width: 1024px) {
-    .restaurant-grid {
-        grid-template-columns: repeat(4, 1fr);
-        justify-content: space-between;
-    }
 }
 
 .restaurant-cards {
