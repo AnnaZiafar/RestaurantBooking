@@ -1,10 +1,16 @@
 package demo.restaurant.dto.existing;
 
 import demo.restaurant.model.Restaurant;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public record DiningTableDto(
-        Long id,
-        Restaurant restaurant,
-        int tableNumber,
-        int seatCapacity
-) {}
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class DiningTableDto {
+    Long id;
+    Restaurant restaurant;
+    int tableNumber;
+    int seatCapacity;
+}
