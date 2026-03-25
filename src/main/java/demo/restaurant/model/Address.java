@@ -10,10 +10,8 @@ import lombok.NoArgsConstructor;
 @Getter
 @Embeddable
 public class Address {
-
     private String city;
     private String street;
     private String streetNumber;
     private String zipcode;
-
 }
